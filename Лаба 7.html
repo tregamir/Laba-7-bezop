@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+Число:<br>
+<input type="text" class="textf" name="color"><br>
+Множитель:<br>
+<input type="text" class="textf1" name="color"><br>
+Слогаемое:<br>
+<input type="text" class="textf2" name="color"><br>
+Модуль:<br>
+<input type="text" class="textf4" name="color"><br>
+<br>
+<input type="button" name="color_ok" value="ok" onclick="shifr()"><br>
+Результат:<br>
+<input type="text" class="res" name="color">
+
+<script type="text/javascript">
+	function shifr(argument) {
+		var first = document.querySelector(".textf").value;
+		document.querySelector(".textf").value="";
+		if(document.querySelector(".textf1").value!=""){
+			var mno = document.querySelector(".textf1").value;
+			document.querySelector(".textf1").value = "";
+			var res = Number (first)*Number (mno);
+		}
+		if(document.querySelector(".textf2").value!=""){
+			var slog = document.querySelector(".textf2").value;
+			document.querySelector(".textf2").value = "";
+			var res = Number (first)+Number (slog);
+		}
+		if(document.querySelector(".textf3").value!=""){
+			var step = document.querySelector(".textf3").value;
+			document.querySelector(".textf3").value = "";
+			var res = Number (first)**Number (step);
+		}
+
+		var mod = document.querySelector(".textf4").value;
+		document.querySelector(".textf4").value="";
+		var res = res%mod;
+		if (res==0){
+			res=first;
+		}
+		document.querySelector(".res").value=res;
+	}
+</script>
+</body>
+</html>
